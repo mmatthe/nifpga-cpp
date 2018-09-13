@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Checksum="EAC193869247E580B552AD83C5759481" xmlns="http://www.ni.com/PlatformFramework">
+	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="4.5.2.51305" FeatureSetName="LabVIEW Controls" MinimumParsableVersion="4.5.0.0" MinimumSemanticallyEquivalentVersion="4.5.0.0" Name="http://www.ni.com/Controls.LabVIEW.Design" Version="4.5.0.49153" />
+		<ParsableNamespace AssemblyFileVersion="4.5.2.51305" FeatureSetName="LabVIEW FPGA" MinimumParsableVersion="4.5.0.0" MinimumSemanticallyEquivalentVersion="4.5.0.0" Name="http://www.ni.com/LabVIEW.FPGA" Version="4.5.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="4.5.2.51305" FeatureSetName="LabVIEW Virtual Instrument" MinimumParsableVersion="4.5.0.0" MinimumSemanticallyEquivalentVersion="4.5.0.0" Name="http://www.ni.com/LabVIEW.VI" Version="4.5.0.49156" />
+		<ParsableNamespace AssemblyFileVersion="4.5.2.51305" FeatureSetName="Common Language Components" MinimumParsableVersion="4.5.0.0" MinimumSemanticallyEquivalentVersion="4.5.0.0" Name="http://www.ni.com/MocCommon" Version="4.5.0.49153" />
+		<ParsableNamespace AssemblyFileVersion="4.5.2.51305" FeatureSetName="Editor" MinimumParsableVersion="4.5.0.0" MinimumSemanticallyEquivalentVersion="4.5.0.0" Name="http://www.ni.com/PanelCommon" Version="4.5.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="4.5.2.51305" FeatureSetName="Editor" MinimumParsableVersion="4.5.0.0" MinimumSemanticallyEquivalentVersion="4.5.0.0" Name="http://www.ni.com/PlatformFramework" Version="4.5.0.49153" />
+		<ApplicationVersionInfo Build="4.5.2.51305" Name="LabVIEW Communications System Design Suite" Version="2.0.1" />
+	</SourceModelFeatureSet>
+	<VirtualInstrument Id="1" xmlns="http://www.ni.com/LabVIEW.VI">
+		<Icon Id="2" ListViewIconCrop="0 0 40 40" xmlns="http://www.ni.com/PlatformFramework">
+			<IconPanel Height="[float]40" Id="3" Left="[float]0" Top="[float]0" Width="[float]40">
+				<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Id="4" Left="[float]0" TemplateName="Gray" Top="[float]0">
+					<Rectangle Fill="[SMSolidColorBrush]#ff727272" Id="5" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+					<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" Id="6" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+					<FileNameText Attached="[bool]True" Id="7" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]HostMain" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden">
+						<FontSetting FontFamily="Verdana" FontSize="6" Id="8" />
+					</FileNameText>
+				</IconTemplate>
+				<Canvas Background="[SMSolidColorBrush]#00ffffff" ClipToBounds="[bool]True" Height="[float]34" Id="9" Left="[float]0" Margin="[SMThickness]3,3,3,3" MinHeight="[float]0" MinWidth="[float]0" Top="[float]0" Width="[float]34" />
+			</IconPanel>
+		</Icon>
+		<ConnectorPane Height="40" Id="10" ListViewHeight="40" ListViewWidth="150" Width="40" xmlns="http://www.ni.com/PlatformFramework">
+			<ConnectorPaneTerminal />
+			<ConnectorPaneTerminal Hotspot="0 15" />
+			<ConnectorPaneTerminal Hotspot="0 25" />
+			<ConnectorPaneTerminal Hotspot="0 35" />
+			<ConnectorPaneTerminal Hotspot="15 0" />
+			<ConnectorPaneTerminal Hotspot="25 0" />
+			<ConnectorPaneTerminal Hotspot="40 5" />
+			<ConnectorPaneTerminal Hotspot="40 15" />
+			<ConnectorPaneTerminal Hotspot="40 25" />
+			<ConnectorPaneTerminal Hotspot="40 35" />
+			<ConnectorPaneTerminal Hotspot="15 40" />
+			<ConnectorPaneTerminal Hotspot="25 40" />
+		</ConnectorPane>
+		<DiagramUnplacedItems Id="11" xmlns="http://www.ni.com/MocCommon" />
+		<FrontPanelUnplacedItems Height="[float]1600" Id="12" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" Top="[float]0" Width="[float]2000" />
+		<BlockDiagram Id="13">
+			<FPGAOpenNode Bounds="205 305 40 40" Id="15" ProjectItem=":NullTarget:USRP\-SharedFifos\-0001\.lvbitx" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+			<DataAccessor Bounds="130 250 40 15" DataItem="16" Id="18" Label="20" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="18" Bounds="57 250 68 14" Id="20" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>RIO address</p.Text>
+			</NodeLabel>
+			<Wire Id="21" Joints="N(18:Value) h(5) v(55) N(15:RIO address)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Literal Bounds="193 315 12 10" DataType="Boolean" Facade="DockedConstantFacade" Id="22" Label="23" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>True</p.Data>
+				<BooleanBehavior />
+				<DockedConstantFacade UndockedSize="26 15" />
+			</Literal>
+			<NodeLabel AttachedTo="22" Bounds="193 315 0 0" Id="23" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>run?</p.Text>
+			</NodeLabel>
+			<Wire Facade="WireInvisibleFacade" Id="24" Joints="N(22:Out) N(15:run?)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+			<ClusterLiteral Bounds="193 335 12 10" DataType="Error" Facade="DockedConstantFacade" Id="25" Label="32" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>
+					<Cluster>
+						<Field1>False</Field1>
+						<Field2>0</Field2>
+						<Field3>""</Field3>
+					</Cluster>
+				</p.Data>
+				<p.TypeDefinitionTargets xmlns="http://www.ni.com/PanelCommon">
+					<TypeDefinitionTarget TargetName="Error\.gtype" />
+				</p.TypeDefinitionTargets>
+				<ClusterBehavior AutoArrange="ArrangeVertically" />
+				<Literal Bounds="5 19 26 15" DataType="Boolean" Facade="NationalInstruments.MocCommon.SourceModel.IBooleanBehavior" Id="26" Label="27">
+					<p.Data>False</p.Data>
+					<BooleanBehavior />
+				</Literal>
+				<NodeLabel AttachedTo="26" Bounds="5 2 34 14" Id="27" xmlns="http://www.ni.com/PlatformFramework">
+					<p.Text>status</p.Text>
+				</NodeLabel>
+				<Literal Bounds="5 51 39.5 16" DataType="Int32" Facade="NationalInstruments.MocCommon.SourceModel.INumericBehavior" Id="28" Label="29">
+					<p.Data>0</p.Data>
+					<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+				</Literal>
+				<NodeLabel AttachedTo="28" Bounds="5 34 26 14" Id="29" xmlns="http://www.ni.com/PlatformFramework">
+					<p.Text>code</p.Text>
+				</NodeLabel>
+				<Literal Bounds="5 84 39.5 15" DataType="String" Facade="NationalInstruments.MocCommon.SourceModel.IStringBehavior" Id="30" Label="31">
+					<p.Data>""</p.Data>
+					<StringBehavior TextDisplayMode="Default" />
+				</Literal>
+				<NodeLabel AttachedTo="30" Bounds="5 67 37 14" Id="31" xmlns="http://www.ni.com/PlatformFramework">
+					<p.Text>source</p.Text>
+				</NodeLabel>
+				<DockedConstantFacade UndockedSize="62.5 109" />
+			</ClusterLiteral>
+			<NodeLabel AttachedTo="25" Bounds="193 335 0 0" Id="32" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>error in</p.Text>
+			</NodeLabel>
+			<Wire Facade="WireInvisibleFacade" Id="33" Joints="N(25:Out) N(15:error in)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+			<FPGADownloadNode Bounds="280 305 40 40" Id="34" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+			<Wire Id="35" Joints="N(15:reference out) N(34:reference in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<FPGARunNode Bounds="350 305 40 40" Id="36" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+			<Wire Id="37" Joints="N(34:reference out) N(36:reference in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="38" Joints="N(34:error out) N(36:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="39" Joints="N(15:error out) N(34:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<HostFifoConfigureNode Bounds="460 305 40 40" FifoName="&quot;Resources.grsc\\H2T_1&quot;" Id="40" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+			<Wire Id="41" Joints="N(36:reference out) N(40:reference in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<HostFifoStartNode Bounds="520 305 40 40" FifoName="&quot;Resources.grsc\\H2T_1&quot;" Id="42" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+			<Wire Id="43" Joints="N(40:reference out) N(42:reference in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="44" Joints="N(40:error out) N(42:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="45" Joints="N(36:error out) N(40:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<CaseStructure Bounds="765 135 605 555" DataType="Error" Id="60" Selected="62" UserSelectorBounds="250 0 106 17">
+				<CaseStructure.Case Bounds="5 5 595 545" Id="61" Pattern="Error" />
+				<CaseStructure.Case Bounds="5 5 595 545" Id="62" Pattern="No Error">
+					<WhileLoop Bounds="30 55 550 455" DiagramId="47" Id="46">
+						<LoopIteration Bounds="5 425 15 15" Id="48" />
+						<LoopCondition Bounds="520 425 15 15" Id="49" />
+						<DataAccessor Bounds="375 420 40 15" DataItem="50" Id="53" Label="54" xmlns="http://www.ni.com/MocCommon">
+							<Terminal DataType="Boolean" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+						</DataAccessor>
+						<Wire Id="55" Joints="N(53:Value) h(5) v(5) N(49:Input)" xmlns="http://www.ni.com/PlatformFramework" />
+						<NodeLabel AttachedTo="53" Bounds="346 420 24 14" Id="54" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>stop</p.Text>
+						</NodeLabel>
+						<Wait Bounds="100 390 30 30" Id="56" />
+						<Literal Bounds="88 400 12 10" DataType="UInt32" Facade="DockedConstantFacade" Id="57" Label="58" xmlns="http://www.ni.com/MocCommon">
+							<p.Data>100</p.Data>
+							<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+							<DockedConstantFacade UndockedSize="42 16" />
+						</Literal>
+						<Wire Facade="WireInvisibleFacade" Id="59" Joints="N(57:Out) N(56:time to wait)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+						<NodeLabel AttachedTo="57" Bounds="88 400 0 0" Id="58" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>milliseconds to wait</p.Text>
+						</NodeLabel>
+						<HostFifoReadNode Bounds="360 150 40 40" FifoName="&quot;Resources.grsc\\T2H_1&quot;" Id="65" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+						<HostFifoWriteNode Bounds="195 150 40 40" FifoName="&quot;Resources.grsc\\H2T_1&quot;" Id="66" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+						<Wire Id="67" Joints="N(66:reference out) N(65:reference in)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="68" Joints="N(66:error out) N(65:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="69" Joints="N(70:i0) h(56) B(1) N(66:reference in) B(1) v(120) N(156:instance in)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Wire Id="74" Joints="N(75:i0) N(66:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+						<DataAccessor Bounds="445 160 40 15" DataItem="79" Id="84" Label="86" xmlns="http://www.ni.com/MocCommon">
+							<Terminal DataType="Int32[]" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+						</DataAccessor>
+						<Wire Id="87" Joints="N(65:data) N(84:Value)" xmlns="http://www.ni.com/PlatformFramework" />
+						<NodeLabel AttachedTo="84" Bounds="490 160 37 14" Id="86" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>output</p.Text>
+						</NodeLabel>
+						<InitializeArray Bounds="115 65 40 30" Id="88" Terminals="element=118, outArray=89, c0t0v=92" />
+						<Wire Id="89" Joints="N(88:outArray) h(5) v(40) B(2) N(99:array) B(2) v(55) N(66:data)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Literal Bounds="65 90 39.5 16" DataType="Int32" Facade="NationalInstruments.MocCommon.SourceModel.INumericBehavior" Id="90" Label="91" xmlns="http://www.ni.com/MocCommon">
+							<p.Data>10</p.Data>
+							<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+						</Literal>
+						<Wire Id="92" Joints="N(90:Out) h(5) v(-5) N(88:c0t0v)" xmlns="http://www.ni.com/PlatformFramework" />
+						<NodeLabel AttachedTo="90" Bounds="65 90 0 0" Id="91" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>dimension size</p.Text>
+						</NodeLabel>
+						<ArraySize Bounds="265 105 40 20" Id="99" />
+						<Wire Id="100" Joints="N(99:size(s\)) h(5) v(45) N(65:number of elements)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Add Bounds="235 20 30 30" Id="106" Terminals="o=108, c0t0v=111, c1t0v=118" />
+						<Wire Id="108" Joints="N(106:o) h(266) v(-5) N(105:47)" xmlns="http://www.ni.com/PlatformFramework" />
+						<Literal Bounds="135 15 39.5 16" DataType="Int32" Facade="NationalInstruments.MocCommon.SourceModel.INumericBehavior" Id="109" Label="110" xmlns="http://www.ni.com/MocCommon">
+							<p.Data>1</p.Data>
+							<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+						</Literal>
+						<Wire Id="111" Joints="N(109:Out) h(5) v(5) N(106:c0t0v)" xmlns="http://www.ni.com/PlatformFramework" />
+						<NodeLabel AttachedTo="109" Bounds="135 15 0 0" Id="110" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>input 0</p.Text>
+						</NodeLabel>
+						<Wire Id="118" Joints="N(104:i0) h(36) B(1) h(19.5) v(10) h(45.5) B(4) N(106:c1t0v) B(4) v(30) N(88:element) B(1) v(-15) N(127:Value)" xmlns="http://www.ni.com/PlatformFramework" />
+						<DataAccessor Bounds="45 10 40 15" DataItem="125" Id="127" Label="129" xmlns="http://www.ni.com/MocCommon">
+							<Terminal DataType="Int32" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+						</DataAccessor>
+						<NodeLabel AttachedTo="127" Bounds="90 10 29 14" Id="129" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>input</p.Text>
+						</NodeLabel>
+						<PropertyNode Bounds="140 270 211 45" Id="156" InstanceDataType="@3a469ac7dbbb47ad8cfa1c3f9309562e" Mode="InstanceProperties" Template="List">
+							<PropertyItemTerminal Action="Write" DataType="Int32" Hotspot="0 25" Id="c0t0v" Path="HostParam" Usage="Required" />
+						</PropertyNode>
+						<DataAccessor Bounds="75 305 40 15" DataItem="158" Id="160" Label="162" xmlns="http://www.ni.com/MocCommon">
+							<Terminal DataType="Int32" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+						</DataAccessor>
+						<Wire Id="163" Joints="N(160:Value) h(5) v(-15) N(156:c0t0v)" xmlns="http://www.ni.com/PlatformFramework" />
+						<NodeLabel AttachedTo="160" Bounds="9 305 61 14" Id="162" xmlns="http://www.ni.com/PlatformFramework">
+							<p.Text>HostParam</p.Text>
+						</NodeLabel>
+						<LoopTunnel Bounds="-4 155 13 10" Docking="Left" Id="70" Terminals="o0=71, i0=69" />
+						<LoopTunnel Bounds="-4 185 13 10" Docking="Left" Id="75" Terminals="o0=76, i0=74" />
+						<LeftShiftRegister Bounds="-4 30 13 10" Docking="Left" Id="104" RightRegister="105" Terminals="o0=117, i0=118" />
+						<RightShiftRegister Bounds="541 30 13 10" Docking="Right" Id="105" Terminals="46, 47=108" />
+					</WhileLoop>
+					<Wire Id="71" Joints="N(72:62) N(70:o0)" xmlns="http://www.ni.com/PlatformFramework" />
+					<Wire Id="76" Joints="N(77:62) N(75:o0)" xmlns="http://www.ni.com/PlatformFramework" />
+					<Literal Bounds="10 15 39.5 16" DataType="Int32" Facade="NationalInstruments.MocCommon.SourceModel.INumericBehavior" Id="116" xmlns="http://www.ni.com/MocCommon">
+						<p.Data>0</p.Data>
+						<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+					</Literal>
+					<Wire Id="117" Joints="N(116:Out) h(5) v(25) h(-34.5) v(45) N(104:o0)" xmlns="http://www.ni.com/PlatformFramework" />
+				</CaseStructure.Case>
+				<CaseStructure.Selector Bounds="-4 40 13 10" Docking="Left" Id="63" Terminals="60=149, 61, 62" />
+				<CaseStructure.Tunnel Bounds="-4 215 13 10" Docking="Left" Id="72" Terminals="60=144, 61, 62=71" />
+				<CaseStructure.Tunnel Bounds="-4 245 13 10" Docking="Left" Id="77" Terminals="60=149, 61, 62=76" />
+			</CaseStructure>
+			<MethodCall Bounds="505 130 40 40" DomainName="NI.MocCommon" Id="131" Target="Display\ Error\.gvi" xmlns="http://www.ni.com/MocCommon">
+				<p.MethodDeclaration>
+					<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+						<Parameter Id="L1" Desc="type of dialog" />
+						<Parameter Id="L0" Desc="error in" />
+						<Parameter Id="R0" Desc="error?" />
+						<Parameter Id="R1" Desc="code" />
+						<Parameter Id="R2" Desc="location" />
+						<Parameter Id="R3" Desc="description" />
+					</MethodDeclaration>
+				</p.MethodDeclaration>
+				<Terminal DataType="@f6dfab9d095b400584aa3e3c2284683f" Direction="Input" Hotspot="0 15" Id="L1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Error" Direction="Input" Id="L0" Usage="Required" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Boolean" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Int32" Direction="Output" Hotspot="40 15" Id="R1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="String" Direction="Output" Hotspot="40 25" Id="R2" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="String" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
+			</MethodCall>
+			<HostFifoConfigureNode Bounds="585 305 40 40" FifoName="&quot;Resources.grsc\\T2H_1&quot;" Id="140" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+			<HostFifoStartNode Bounds="645 305 40 40" FifoName="&quot;Resources.grsc\\T2H_1&quot;" Id="141" xmlns="http://www.ni.com/LabVIEW.FPGA" />
+			<Wire Id="144" Joints="N(141:reference out) h(10) v(45) N(72:60)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="145" Joints="N(42:reference out) N(140:reference in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="148" Joints="N(42:error out) N(140:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="149" Joints="N(141:error out) h(60) B(1) v(-90) B(2) h(-247) v(-115) N(131:L0) B(2) v(-70) N(63:60) B(1) v(45) N(77:60)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="150" Joints="N(140:error out) N(141:error in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="151" Joints="N(140:reference out) N(141:reference in)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Literal Bounds="358.5 245 56 16" DataType="UInt32" Facade="NationalInstruments.MocCommon.SourceModel.INumericBehavior" Id="152" Label="153" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>10000</p.Data>
+				<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+			</Literal>
+			<NodeLabel AttachedTo="152" Bounds="358.5 245 0 0" Id="153" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>depth</p.Text>
+			</NodeLabel>
+			<Wire Id="154" Joints="N(152:Out) h(5) v(10) B(2) h(160.5) v(60) N(140:depth) B(2) v(60) N(40:depth)" xmlns="http://www.ni.com/PlatformFramework" />
+		</BlockDiagram>
+		<CPFrontPanel Height="[float]1600" Id="14" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" Top="[float]0" Width="[float]2000">
+			<StringControl AcceptsReturn="[bool]True" BaseName="[string]String" Height="[float]22" HorizontalScrollBarVisibility="[ScrollBarVisibility]Hidden" Id="19" IsReadOnly="[bool]False" Label="[UIModel]122" Left="[float]201" Text="{DataItemBinding Id=16}" Top="[float]163" VerticalScrollBarVisibility="[ScrollBarVisibility]Auto" Width="[float]90" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="122" LabelOwner="[UIModel]19" Left="[float]201" Text="[string]RIO address" Top="[float]140" Width="[float]64" xmlns="http://www.ni.com/PanelCommon" />
+			<Button BaseName="[string]Stop" Content="[string]Stop" Foreground="[SMColor]#ffff0000" Height="[float]30" Id="51" IncludeInCapture="[bool]False" IsMomentary="[bool]False" Label="[UIModel]123" Latch="[bool]True" Left="[float]779" MinHeight="[float]13" MinWidth="[float]13" Shape="[ButtonShape]Square" Top="[float]346" Value="{DataItemBinding Id=50}" Width="[float]75" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="123" LabelOwner="[UIModel]51" Left="[float]779" Text="[string]stop" Top="[float]323" Width="[float]24" xmlns="http://www.ni.com/PanelCommon" />
+			<ArrayViewer ArrayElement="[UIModel]82" BaseName="[string]Array" Columns="[int]1" Dimensions="[int]1" Height="[float]252" Id="85" IndexVisibility="[Visibility]Visible" Label="[UIModel]124" Left="[float]350" Orientation="[SMOrientation]Vertical" Rows="[int]10" Top="[float]281" Value="{DataItemBinding Id=79}" Width="[float]130" xmlns="http://www.ni.com/PanelCommon">
+				<p.DefaultElementValue>0</p.DefaultElementValue>
+				<NumericText BaseName="[string]Numeric" Height="[float]22" Id="82" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" Interval="[int]1" Left="[float]53" MinHeight="[float]22" Name="[string]Child" Top="[float]31" Value="[int]0" ValueFormatter="[string]LV:G6" ValueType="[Type]Int32" Width="[float]70" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			</ArrayViewer>
+			<Label Height="[float]16" Id="124" LabelOwner="[UIModel]85" Left="[float]350" Text="[string]output" Top="[float]258" Width="[float]36" xmlns="http://www.ni.com/PanelCommon" />
+			<NumericText BaseName="[string]Numeric" Height="[float]22" Id="128" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" Interval="[int]1" Label="[UIModel]130" Left="[float]232" MinHeight="[float]22" Top="[float]284" Value="{DataItemBinding Id=125}" ValueFormatter="[string]LV:G6" ValueType="[Type]Int32" Width="[float]70" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="130" LabelOwner="[UIModel]128" Left="[float]232" Text="[string]input" Top="[float]261" Width="[float]28" xmlns="http://www.ni.com/PanelCommon" />
+			<NumericText BaseName="[string]Numeric" Height="[float]22" Id="161" InteractionMode="[NumericTextBoxInteractionModes]ArrowKeys, ScrollWheel, ButtonClicks, TextInput" Interval="[int]1" Label="[UIModel]164" Left="[float]610" MinHeight="[float]22" Top="[float]163" Value="{DataItemBinding Id=158}" ValueFormatter="[string]LV:G6" ValueType="[Type]Int32" Width="[float]70" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="164" LabelOwner="[UIModel]161" Left="[float]610" Text="[string]HostParam" Top="[float]140" Width="[float]59" xmlns="http://www.ni.com/PanelCommon" />
+		</CPFrontPanel>
+		<DataItem AdaptToDiagramType="True" DataType="String" Id="16" Name="RIO address" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>RIO0</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" DataType="Boolean" Id="50" IsLatched="True" Name="stop" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>False</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" DataType="Int32[]" Id="79" Name="output" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>null</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" DataType="Int32" Id="125" Name="input" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>0</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" DataType="Int32" Id="158" Name="HostParam" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>5</p.DefaultValue>
+		</DataItem>
+		<IconTable xmlns="http://www.ni.com/PlatformFramework">
+			<p.IconModel Target="Display\ Error\.gvi">
+				<MergeScript>
+					<MergeItem Path="." IsPrimary="True">
+						<Icon ListViewIconCrop="0 0 40 40">
+							<IconPanel Height="[float]40" Left="[float]0" Top="[float]0" Width="[float]40">
+								<Canvas Height="[float]40" Left="[float]0" Top="[float]0" Width="[float]40">
+									<Path Data="[PathGeometry]M 4,0 L 36,0 C 38.209,0 40,1.791 40,4 L 40,36 C 40,38.209 38.209,40 36,40 L 4,40 C 1.791,40 0,38.209 0,36 L 0,4 C 0,1.791 1.791,0 4,0 " Fill="[SMSolidColorBrush]#ff727272" Height="[float]40" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]40" />
+									<Path Data="[PathGeometry]M 4,1 L 36,1 C 37.657,1 39,2.343 39,4 L 39,36 C 39,37.657 37.657,39 36,39 L 4,39 C 2.343,39 1,37.657 1,36 L 1,4 C 1,2.343 2.343,1 4,1 " Fill="[SMSolidColorBrush]#ffffffff" Height="[float]40" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]40" />
+									<Path Data="[PathGeometry]M 4,2 L 36,2 C 37.104,2 38,2.896 38,4 L 38,36 C 38,37.105 37.104,38 36,38 L 4,38 C 2.896,38 2,37.105 2,36 L 2,4 C 2,2.896 2.896,2 4,2 " Fill="[SMSolidColorBrush]#ffebebeb" Height="[float]40" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]40" />
+									<Path Data="[PathGeometry]M 4.001,2.001 C 2.897,2.001 2.001,2.966 2.001,4.155 L 2.001,16 L 16,16 L 16,2 L 4.001,2.001 Z M 4.239,11.354 L 4.024,9.42 L 7.893,9.42 L 4.239,11.354 Z M 3.452,5.968 L 5.1,4.036 L 8.897,7.903 L 3.452,5.968 Z M 12.954,14 L 10.233,14 L 10.233,12.222 L 12.954,12.222 L 12.954,14 Z M 12.692,11.11 L 10.495,11.11 L 10.186,3.97 L 13.002,3.97 L 12.692,11.11 Z" Fill="[SMSolidColorBrush]#ffa0a017" Height="[float]40" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]40" />
+									<Path Data="[PathGeometry]M 18,18 L 4,18 L 4,17 L 17,17 L 17,10 L 18,10 L 18,18 Z M 33.971,10 L 19,10 L 19,18 L 19,19 L 18,19 L 4,19 L 4,26.971 C 4,28.092 4.908,29 6.029,29 L 28,29 L 28,33 L 31.971,29 L 33.971,29 C 35.091,29 36,28.092 36,26.971 L 36,12.029 C 36,10.908 35.091,10 33.971,10 Z" Fill="[SMSolidColorBrush]#b2000000" Height="[float]40" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]40" />
+								</Canvas>
+							</IconPanel>
+						</Icon>
+					</MergeItem>
+				</MergeScript>
+			</p.IconModel>
+		</IconTable>
+	</VirtualInstrument>
+	<DataTypeReferenceTable xmlns="http://www.ni.com/PlatformFramework">
+		<p.TypeReference TypeId="3a469ac7dbbb47ad8cfa1c3f9309562e">
+			<Attributed>
+				<AttributedType>
+					<Generic>
+						<Constraints>
+							<Composite Id="1" Name="HostParam" ReferenceClass="" Interface="">
+								<GenericTypeDefinition>
+									<Composite Id="2" Name="HostParam" ReferenceClass="" Interface="">
+										<GenericTypeDefinition>
+											<Composite RefId="2" />
+										</GenericTypeDefinition>
+										<GenericParameters>
+											<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+										</GenericParameters>
+										<BaseType>
+											<Void />
+										</BaseType>
+										<Members>
+											<Field FieldAccessPolicy="ReadWrite" Name="HostParam">
+												<DataType>
+													<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+												</DataType>
+											</Field>
+										</Members>
+									</Composite>
+								</GenericTypeDefinition>
+								<ClosedGenericParameters>
+									<Int32 />
+								</ClosedGenericParameters>
+								<BaseType>
+									<Void />
+								</BaseType>
+								<Members>
+									<Field FieldAccessPolicy="ReadWrite" Name="HostParam" DataType="Int32" />
+								</Members>
+							</Composite>
+							<Composite Id="3" Name="IFPGAReferenceDataType" ReferenceClass="" Interface="" GenericTypeDefinition="Void" BaseType="Void" />
+							<Composite Id="4" Name="Resources.grsc\T2H_2" ReferenceClass="" Interface="">
+								<GenericTypeDefinition>
+									<Composite Id="5" Name="Resources.grsc\T2H_2" ReferenceClass="" Interface="">
+										<GenericTypeDefinition>
+											<Composite RefId="5" />
+										</GenericTypeDefinition>
+										<GenericParameters>
+											<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+										</GenericParameters>
+										<BaseType>
+											<Void />
+										</BaseType>
+										<Members>
+											<Function Id="6" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Configure" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="5" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+												</Parameters>
+											</Function>
+											<Function Id="7" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Read" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="5" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Number of Elements" DataType="UInt32" />
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Required" Name="Data">
+														<DataType>
+															<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+														</DataType>
+													</Parameter>
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Elements Remaining" DataType="UInt32" />
+												</Parameters>
+											</Function>
+											<Function Id="8" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Start" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="5" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+											<Function Id="9" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Stop" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="5" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+										</Members>
+									</Composite>
+								</GenericTypeDefinition>
+								<ClosedGenericParameters>
+									<VariableArray DereferenceType="Int32" />
+								</ClosedGenericParameters>
+								<BaseType>
+									<Void />
+								</BaseType>
+								<Members>
+									<Function Id="10" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Configure" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="4" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+										</Parameters>
+									</Function>
+									<Function Id="11" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Read" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="4" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Number of Elements" DataType="UInt32" />
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Required" Name="Data">
+												<DataType>
+													<VariableArray DereferenceType="Int32" />
+												</DataType>
+											</Parameter>
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Elements Remaining" DataType="UInt32" />
+										</Parameters>
+									</Function>
+									<Function Id="12" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Start" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="4" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+									<Function Id="13" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_2.Stop" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="4" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+								</Members>
+							</Composite>
+							<Composite Id="14" Name="Resources.grsc\H2T_2" ReferenceClass="" Interface="">
+								<GenericTypeDefinition>
+									<Composite Id="15" Name="Resources.grsc\H2T_2" ReferenceClass="" Interface="">
+										<GenericTypeDefinition>
+											<Composite RefId="15" />
+										</GenericTypeDefinition>
+										<GenericParameters>
+											<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+										</GenericParameters>
+										<BaseType>
+											<Void />
+										</BaseType>
+										<Members>
+											<Function Id="16" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Configure" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="15" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+												</Parameters>
+											</Function>
+											<Function Id="17" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Start" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="15" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+											<Function Id="18" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Stop" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="15" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+											<Function Id="19" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Write" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="15" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Data">
+														<DataType>
+															<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+														</DataType>
+													</Parameter>
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Empty Elements Remaining" DataType="UInt32" />
+												</Parameters>
+											</Function>
+										</Members>
+									</Composite>
+								</GenericTypeDefinition>
+								<ClosedGenericParameters>
+									<VariableArray DereferenceType="Int32" />
+								</ClosedGenericParameters>
+								<BaseType>
+									<Void />
+								</BaseType>
+								<Members>
+									<Function Id="20" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Configure" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="14" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+										</Parameters>
+									</Function>
+									<Function Id="21" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Start" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="14" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+									<Function Id="22" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Stop" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="14" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+									<Function Id="23" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_2.Write" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="14" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Data">
+												<DataType>
+													<VariableArray DereferenceType="Int32" />
+												</DataType>
+											</Parameter>
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Empty Elements Remaining" DataType="UInt32" />
+										</Parameters>
+									</Function>
+								</Members>
+							</Composite>
+							<Composite Id="24" Name="Resources.grsc\H2T_1" ReferenceClass="" Interface="">
+								<GenericTypeDefinition>
+									<Composite Id="25" Name="Resources.grsc\H2T_1" ReferenceClass="" Interface="">
+										<GenericTypeDefinition>
+											<Composite RefId="25" />
+										</GenericTypeDefinition>
+										<GenericParameters>
+											<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+										</GenericParameters>
+										<BaseType>
+											<Void />
+										</BaseType>
+										<Members>
+											<Function Id="26" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Configure" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="25" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+												</Parameters>
+											</Function>
+											<Function Id="27" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Start" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="25" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+											<Function Id="28" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Stop" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="25" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+											<Function Id="29" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Write" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="25" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Data">
+														<DataType>
+															<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+														</DataType>
+													</Parameter>
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Empty Elements Remaining" DataType="UInt32" />
+												</Parameters>
+											</Function>
+										</Members>
+									</Composite>
+								</GenericTypeDefinition>
+								<ClosedGenericParameters>
+									<VariableArray DereferenceType="Int32" />
+								</ClosedGenericParameters>
+								<BaseType>
+									<Void />
+								</BaseType>
+								<Members>
+									<Function Id="30" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Configure" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="24" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+										</Parameters>
+									</Function>
+									<Function Id="31" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Start" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="24" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+									<Function Id="32" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Stop" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="24" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+									<Function Id="33" IsStatic="False" IsConstructor="False" Name="Resources.grsc\H2T_1.Write" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="24" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Data">
+												<DataType>
+													<VariableArray DereferenceType="Int32" />
+												</DataType>
+											</Parameter>
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Empty Elements Remaining" DataType="UInt32" />
+										</Parameters>
+									</Function>
+								</Members>
+							</Composite>
+							<Composite Id="34" Name="Resources.grsc\T2H_1" ReferenceClass="" Interface="">
+								<GenericTypeDefinition>
+									<Composite Id="35" Name="Resources.grsc\T2H_1" ReferenceClass="" Interface="">
+										<GenericTypeDefinition>
+											<Composite RefId="35" />
+										</GenericTypeDefinition>
+										<GenericParameters>
+											<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+										</GenericParameters>
+										<BaseType>
+											<Void />
+										</BaseType>
+										<Members>
+											<Function Id="36" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Configure" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="35" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+												</Parameters>
+											</Function>
+											<Function Id="37" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Read" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="35" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+												<Parameters>
+													<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Number of Elements" DataType="UInt32" />
+													<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Required" Name="Data">
+														<DataType>
+															<Typedef TypedefName="T" UnderlyingType="@6fc91c7c7bd041b9883b057683c8c036" />
+														</DataType>
+													</Parameter>
+													<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Elements Remaining" DataType="UInt32" />
+												</Parameters>
+											</Function>
+											<Function Id="38" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Start" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="35" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+											<Function Id="39" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Stop" ReturnType="Void">
+												<DeclaringType>
+													<Composite RefId="35" />
+												</DeclaringType>
+												<GenericTypeDefinition>
+													<Void />
+												</GenericTypeDefinition>
+											</Function>
+										</Members>
+									</Composite>
+								</GenericTypeDefinition>
+								<ClosedGenericParameters>
+									<VariableArray DereferenceType="Int32" />
+								</ClosedGenericParameters>
+								<BaseType>
+									<Void />
+								</BaseType>
+								<Members>
+									<Function Id="40" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Configure" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="34" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Requested Depth" DataType="UInt32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Actual Depth" DataType="UInt32" />
+										</Parameters>
+									</Function>
+									<Function Id="41" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Read" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="34" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+										<Parameters>
+											<Parameter InputParameterPassingRule="Required" OutputParameterPassingRule="NotAllowed" Name="Number of Elements" DataType="UInt32" />
+											<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="Timeout (ms)" DataType="Int32" />
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Required" Name="Data">
+												<DataType>
+													<VariableArray DereferenceType="Int32" />
+												</DataType>
+											</Parameter>
+											<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="Elements Remaining" DataType="UInt32" />
+										</Parameters>
+									</Function>
+									<Function Id="42" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Start" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="34" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+									<Function Id="43" IsStatic="False" IsConstructor="False" Name="Resources.grsc\T2H_1.Stop" ReturnType="Void">
+										<DeclaringType>
+											<Composite RefId="34" />
+										</DeclaringType>
+										<GenericTypeDefinition>
+											<Void />
+										</GenericTypeDefinition>
+									</Function>
+								</Members>
+							</Composite>
+						</Constraints>
+					</Generic>
+				</AttributedType>
+				<AttributeValues>
+					<AttributeValue Name="NI_PlatformFramework_RefnumAttributes" Value="[NI_PlatformFramework_RefnumAttributes]Refnum" />
+					<AttributeValue Name="NI_UdrClass" Value="[string]Interface" />
+					<AttributeValue Name="NI_UdrNamespace" Value="[string]FPGA" />
+				</AttributeValues>
+			</Attributed>
+		</p.TypeReference>
+		<p.TypeReference TypeId="f6dfab9d095b400584aa3e3c2284683f">
+			<Typedef TypedefName="Error Dialog Type.gtype" UnderlyingType="@aed0e95ad3fd4ea08e7376092a7f6db7" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="6fc91c7c7bd041b9883b057683c8c036">
+			<Generic />
+		</p.TypeReference>
+		<p.TypeReference TypeId="aed0e95ad3fd4ea08e7376092a7f6db7">
+			<Enumeration>
+				<Members>
+					<EnumerationMember Value="0" Name="no dialog" />
+					<EnumerationMember Value="1" Name="OK message" />
+					<EnumerationMember Value="2" Name="continue or stop message" />
+					<EnumerationMember Value="3" Name="OK message + warnings" />
+					<EnumerationMember Value="4" Name="continue/stop + warnings" />
+				</Members>
+				<DataType>
+					<UInt16 />
+				</DataType>
+			</Enumeration>
+		</p.TypeReference>
+	</DataTypeReferenceTable>
+</SourceFile>
