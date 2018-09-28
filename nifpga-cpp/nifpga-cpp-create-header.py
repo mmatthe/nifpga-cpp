@@ -24,6 +24,8 @@ data_type_mapping = {}
 for w in [8,16,32,64]:
     data_type_mapping["U%d" % w] = "uint%d_t" % w
     data_type_mapping["I%d" % w] = "int%d_t" % w
+data_type_mapping["Bool"] = "bool"
+data_type_mapping["Cluster"] = None
 
 def create_cppsafe_name(name):
     patterns = [(" ", ""),
@@ -45,9 +47,10 @@ def export_register(stream, bitfile, register):
     safename = create_cppsafe_name(name)
     name = name.replace("\\", "\\\\")
     datatype = data_type_mapping[register.datatype.name]
-    address = bitfile.base_address_on_device() + register.offset
-    text = f'nifpga::Register<{datatype}> reg_{safename}({address}, "{name}");'
-    print (text, file=stream)
+    if datatype is not None:
+        address = bitfile.base_address_on_device() + register.offset
+        text = f'nifpga::Register<{datatype}> reg_{safename}({address}, "{name}");'
+        print (text, file=stream)
 
 def extractLeafFifoName(fifoname):
     pos = fifoname.rfind("\\")
