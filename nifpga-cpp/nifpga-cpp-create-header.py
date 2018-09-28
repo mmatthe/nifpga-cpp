@@ -33,7 +33,11 @@ def create_cppsafe_name(name):
                 (".", "_"),
                 (",", "_"),
                 ("\\", "_"),
-                ("/", "_")]
+                ("/", "_"),
+                ("(", "_"),
+                (")", "_"),
+                ("[", "_"),
+                ("]", "_")]
     for pat, to in patterns:
         name = name.replace(pat, to)
     return name
