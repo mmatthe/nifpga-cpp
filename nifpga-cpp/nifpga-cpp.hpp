@@ -12,7 +12,7 @@ namespace nifpga {
     using runtime_error::runtime_error;
   };
 
-  void throwIfError(NiFpga_Status status, const char* message) {
+  void throwIfError(NiFpga_Status status, const std::string& message) {
     if (NiFpga_IsError(status)) {
       throw fpga_exception("FPGA error. Error code: " + std::to_string(status) + "\n" + message);
     }
@@ -197,9 +197,9 @@ namespace nifpga {
   inline void initialize() { throwIfError(NiFpga_Initialize(), "NiFpga_Initialize"); }
   inline void finalize() { throwIfError(NiFpga_Finalize(), "NiFpga_Finalize"); }
 
-  inline NiFpga_Session open(const char* bitfile, const char* signature, const char* resource, uint32_t attribute) {
+  inline NiFpga_Session open(const std::string& bitfile, const std::string& signature, const std::string& resource, uint32_t attribute) {
     NiFpga_Session session;
-    throwIfError(NiFpga_Open(bitfile, signature, resource, attribute, &session), "NiFpga_Open");
+    throwIfError(NiFpga_Open(bitfile.c_str(), signature.c_str(), resource.c_str(), attribute, &session), "NiFpga_Open");
     return session;
   }
   inline void close(NiFpga_Session session, uint32_t attribute) {
