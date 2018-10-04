@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
+
 import argparse
-from io import StringIO
+from io import BytesIO as StringIO
 import os, sys
 import datetime
 
@@ -11,13 +13,13 @@ import nifpga
 
 def export_bitfile(stream, filepath, signature):
     filepath = os.path.basename(filepath)
-    text = f'''
+    text = '''
 
 // Bitfile
-const char* bitfile_filepath  = "{filepath}";
-const char* bitfile_signature = "{signature}";
+const char* bitfile_filepath  = "%s";
+const char* bitfile_signature = "%s";
 
-'''
+''' % (filepath, signature)
     print(text, file=stream)
 
 data_type_mapping = {}
@@ -46,7 +48,7 @@ def export_register(stream, bitfile, register):
     name = name.replace("\\", "\\\\")
     datatype = data_type_mapping[register.datatype.name]
     address = bitfile.base_address_on_device() + register.offset
-    text = f'nifpga::Register<{datatype}> reg_{safename}({address}, "{name}");'
+    text = 'nifpga::Register<%s> reg_%s(%s, "%s");' % (datatype, safename, address, name)
     print (text, file=stream)
 
 def extractLeafFifoName(fifoname):
@@ -64,7 +66,7 @@ def export_fifo(stream, bitfile, fifo):
     safename = create_cppsafe_name(name)
     datatype = data_type_mapping[fifo.datatype.name]
 
-    text = f'nifpga::Fifo<{datatype}> fifo_{safename}({number}, "{name}");'
+    text = 'nifpga::Fifo<%s> fifo_%s(%s, "%s");' % (datatype, safename, number, name)
     print (text, file=stream)
 
 
