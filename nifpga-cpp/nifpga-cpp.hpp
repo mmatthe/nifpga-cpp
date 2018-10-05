@@ -12,7 +12,7 @@ namespace nifpga {
     using runtime_error::runtime_error;
   };
 
-  void throwIfError(NiFpga_Status status, const std::string& message) {
+  inline void throwIfError(NiFpga_Status status, const std::string& message) {
     if (NiFpga_IsError(status)) {
       throw fpga_exception("FPGA error. Error code: " + std::to_string(status) + "\n" + message);
     }
@@ -48,7 +48,7 @@ namespace nifpga {
 
 #define readRegister_impl_instance(data_type, func)			\
   template <>								\
-  NiFpga_Status readRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* out) { \
+  inline NiFpga_Status readRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* out) { \
     return func(session, id, out);   }
 
   //////////// Write Register
@@ -56,7 +56,7 @@ namespace nifpga {
 
 #define writeRegister_impl_instance(data_type, func)			\
   template <>								\
-  NiFpga_Status writeRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type value) { \
+  inline NiFpga_Status writeRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type value) { \
     return func(session, id, value);  }
 
 
@@ -149,13 +149,13 @@ namespace nifpga {
 
 #define readFifo_impl_instance(data_type, readfunc) \
   template <> \
-  NiFpga_Status readFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
+  inline NiFpga_Status readFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
     return readfunc(session, id, buffer, number_of_elements, timeout, elements_remaining); \
   }
 
 #define writeFifo_impl_instance(data_type, writefunc) \
   template <> \
-  NiFpga_Status writeFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
+  inline NiFpga_Status writeFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
     return writefunc(session, id, buffer, number_of_elements, timeout, elements_remaining); \
   }
 

@@ -16,8 +16,8 @@ def export_bitfile(stream, filepath, signature):
     text = '''
 
 // Bitfile
-const char* bitfile_filepath  = "%s";
-const char* bitfile_signature = "%s";
+static const char* bitfile_filepath  = "%s";
+static const char* bitfile_signature = "%s";
 
 ''' % (filepath, signature)
     print(text, file=stream)
@@ -55,7 +55,7 @@ def export_register(stream, bitfile, register):
     datatype = data_type_mapping[register.datatype.name]
     if datatype is not None:
         address = bitfile.base_address_on_device() + register.offset
-        text = 'nifpga::Register<%s> reg_%s(%s, "%s");' % (datatype, safename, address, name)
+        text = 'static nifpga::Register<%s> reg_%s(%s, "%s");' % (datatype, safename, address, name)
         print (text, file=stream)
 
 def extractLeafFifoName(fifoname):
@@ -73,7 +73,7 @@ def export_fifo(stream, bitfile, fifo):
     safename = create_cppsafe_name(name)
     datatype = data_type_mapping[fifo.datatype.name]
 
-    text = 'nifpga::Fifo<%s> fifo_%s(%s, "%s");' % (datatype, safename, number, name)
+    text = 'static nifpga::Fifo<%s> fifo_%s(%s, "%s");' % (datatype, safename, number, name)
     print (text, file=stream)
 
 
