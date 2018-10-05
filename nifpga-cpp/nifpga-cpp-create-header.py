@@ -14,7 +14,6 @@ import nifpga
 def export_bitfile(stream, filepath, signature):
     filepath = os.path.basename(filepath)
     text = '''
-
 // Bitfile
 static const char* bitfile_filepath  = "%s";
 static const char* bitfile_signature = "%s";
@@ -93,6 +92,8 @@ def main():
 
     finaloutput = StringIO()
     print("// Automatically generated at %s" % datetime.datetime.now(), file=finaloutput)
+    print("#ifndef BITFILE_H_INCLUDED", file=finaloutput)
+    print("#define BITFILE_H_INCLUDED", file=finaloutput)
 
     export_bitfile(finaloutput, filepath, signature)
 
@@ -107,6 +108,8 @@ def main():
 
     registers = bitfile.registers
     fifos = bitfile.fifos
+
+    print("#endif", file=finaloutput)
 
     print (finaloutput.getvalue())
 

@@ -2,6 +2,7 @@
 #define NIFPGA_CPP_H
 
 #include <string>
+#include <memory>
 
 #include "NiFpga.h"
 
@@ -185,6 +186,24 @@ namespace nifpga {
   template <class data_type>
   void writeFifo(NiFpga_Session session, Fifo<data_type>& fifo, data_type* buffer_out, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) {
     throwIfError(writeFifo_impl<data_type>(session, fifo.id, buffer_out, number_of_elements, timeout, elements_remaining), "writeFifo");
+  }
+
+  template <class data_type>
+  size_t elementsInFifo(NiFpga_Session session, Fifo<data_type>& fifo) {
+    data_type buffer;
+    size_t elements;
+    readFifo(session, fifo, &buffer, 0, 1000, &elements);
+    return elements;
+  }
+
+  template <class data_type>
+  void clearFifo(NiFpga_Session session, Fifo<data_type>& fifo) {
+    std::cout << "Clear " << fifo.name << std::endl;
+    while(size_t elements = elementsInFifo(session, fifo)) {
+      std::unique_ptr<data_type[]> buffer(new data_type[elements]);
+      std::cout << "Clearing " << elements << " elements..." << std::endl;
+      readFifo(session, fifo, buffer.get(), elements, 10, NULL);
+    }
   }
 
   /*template <class data_type>
