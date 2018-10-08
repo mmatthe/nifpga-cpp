@@ -10,12 +10,14 @@ namespace nifpga {
 
   class fpga_exception : public std::runtime_error  {
   public:
-    using runtime_error::runtime_error;
+    fpga_exception(const std::string& error, uint32_t code) 
+      : runtime_error(error), _code(code) {}
+    uint32_t _code;
   };
 
   inline void throwIfError(NiFpga_Status status, const std::string& message) {
     if (NiFpga_IsError(status)) {
-      throw fpga_exception("FPGA error. Error code: " + std::to_string(status) + "\n" + message);
+      throw fpga_exception("FPGA error. Error code: " + std::to_string(status) + "\n" + message, status);
     }
   }
 
