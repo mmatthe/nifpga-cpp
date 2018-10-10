@@ -2,11 +2,14 @@
 
 from __future__ import print_function
 
-import argparse
-from io import BytesIO as StringIO
 import os, sys
-import datetime
+if sys.version_info.major == 3:
+    from io import StringIO
+else:
+    from io import BytesIO as StringIO
 
+import datetime
+import argparse
 import nifpga
 
 
