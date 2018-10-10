@@ -2,6 +2,7 @@
 #define NIFPGA_CPP_H
 
 #include <string>
+#include <memory>
 
 #include "NiFpga.h"
 
@@ -9,12 +10,14 @@ namespace nifpga {
 
   class fpga_exception : public std::runtime_error  {
   public:
-    using runtime_error::runtime_error;
+    fpga_exception(const std::string& error, uint32_t code) 
+      : runtime_error(error), _code(code) {}
+    uint32_t _code;
   };
 
-  void throwIfError(NiFpga_Status status, const std::string& message) {
+  inline void throwIfError(NiFpga_Status status, const std::string& message) {
     if (NiFpga_IsError(status)) {
-      throw fpga_exception("FPGA error. Error code: " + std::to_string(status) + "\n" + message);
+      throw fpga_exception("FPGA error. Error code: " + std::to_string(status) + "\n" + message, status);
     }
   }
 
@@ -48,7 +51,7 @@ namespace nifpga {
 
 #define readRegister_impl_instance(data_type, func)			\
   template <>								\
-  NiFpga_Status readRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* out) { \
+  inline NiFpga_Status readRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* out) { \
     return func(session, id, out);   }
 
   //////////// Write Register
@@ -56,7 +59,7 @@ namespace nifpga {
 
 #define writeRegister_impl_instance(data_type, func)			\
   template <>								\
-  NiFpga_Status writeRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type value) { \
+  inline NiFpga_Status writeRegister_impl<data_type>(NiFpga_Session session, uint32_t id, data_type value) { \
     return func(session, id, value);  }
 
 
@@ -149,13 +152,13 @@ namespace nifpga {
 
 #define readFifo_impl_instance(data_type, readfunc) \
   template <> \
-  NiFpga_Status readFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
+  inline NiFpga_Status readFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
     return readfunc(session, id, buffer, number_of_elements, timeout, elements_remaining); \
   }
 
 #define writeFifo_impl_instance(data_type, writefunc) \
   template <> \
-  NiFpga_Status writeFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
+  inline NiFpga_Status writeFifo_impl<data_type>(NiFpga_Session session, uint32_t id, data_type* buffer, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) { \
     return writefunc(session, id, buffer, number_of_elements, timeout, elements_remaining); \
   }
 
@@ -185,6 +188,24 @@ namespace nifpga {
   template <class data_type>
   void writeFifo(NiFpga_Session session, Fifo<data_type>& fifo, data_type* buffer_out, size_t number_of_elements, uint32_t timeout, size_t* elements_remaining) {
     throwIfError(writeFifo_impl<data_type>(session, fifo.id, buffer_out, number_of_elements, timeout, elements_remaining), "writeFifo");
+  }
+
+  template <class data_type>
+  size_t elementsInFifo(NiFpga_Session session, Fifo<data_type>& fifo) {
+    data_type buffer;
+    size_t elements;
+    readFifo(session, fifo, &buffer, 0, 1000, &elements);
+    return elements;
+  }
+
+  template <class data_type>
+  void clearFifo(NiFpga_Session session, Fifo<data_type>& fifo) {
+    std::cout << "Clear " << fifo.name << std::endl;
+    while(size_t elements = elementsInFifo(session, fifo)) {
+      std::unique_ptr<data_type[]> buffer(new data_type[elements]);
+      std::cout << "Clearing " << elements << " elements..." << std::endl;
+      readFifo(session, fifo, buffer.get(), elements, 10, NULL);
+    }
   }
 
   /*template <class data_type>
