@@ -30,6 +30,7 @@ for w in [8,16,32,64]:
     data_type_mapping["I%d" % w] = "int%d_t" % w
 data_type_mapping["Bool"] = "uint8_t"
 data_type_mapping["Cluster"] = None
+data_type_mapping["Fxp"] = None
 
 def create_cppsafe_name(name):
     patterns = [(" ", ""),
